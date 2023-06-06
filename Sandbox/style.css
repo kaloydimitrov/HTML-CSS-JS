@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding-left: 130px;
+    padding-top: 90px;
+}
+
+.header {
+    position: fixed;
+    background-color: antiquewhite;
+    top: 0;
+    height: 90px;
+    width: 100%;
+}
+
+.sidebar {
+    position: fixed;
+    background-color: antiquewhite;
+    top: 90px;
+    left: 0;
+    bottom: 0;
+    width: 130px;
+}
+
+.main-container {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    /* TODO: Make a grid for rows */
+    /* grid-template-rows: ; */
+
+    column-gap: 20px;
+    row-gap: 40px;
+}
+
+.video-container {
+    max-width: 400px;
+    height: 300px;
+    background-color: aqua;
+}
