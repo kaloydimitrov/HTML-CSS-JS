@@ -1,3 +1,7 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 body {
     padding-top: 90px;
     padding-left: 200px;
@@ -15,11 +19,10 @@ body {
     display: grid;
     grid-template-columns: 200px 1fr 300px;
     align-items: center;
+    z-index: 1;
 }
 
 .logobar {
-    width: 200px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,15 +34,17 @@ body {
 }
 
 .searchbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 25px;
-    width: 100%;
+    max-width: 2000px;
 }
 
 .searchbar input {
-    width: 80%;
-    max-width: 2000px;
+    width: 70%;
     height: 43px;
-    border-radius: 10px 0 0 10px;
+    border-radius: 50px 0 0 50px;
 
     border: 1px solid rgba(0, 0, 0, 0.4);
 }
@@ -49,17 +54,28 @@ body {
 }
 
 .searchbar button {
-    width: 45px;
+    position: relative;
+    background-color: rgba(248, 248, 248, 1);
+    width: 75px;
     height: 47px;
     margin-left: -5px;
-    border-radius: 0 10px 10px 0;
+    border-radius: 0 50px 50px 0;
     cursor: pointer;
-
     border: 1px solid rgba(0, 0, 0, 0.4);
 }
 
+/* search-icon */
 .searchbar button img {
-    width: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+}
+
+.mic-icon {
+    width: 25px;
+    margin-left: 15px;
 }
 
 .accountbar {
@@ -76,13 +92,8 @@ body {
     cursor: pointer;
 }
 
-.upload-icon {
-    width: 50px;
-    cursor: pointer;
-}
-
-.bell-icon {
-    width: 65px;
+.upload-icon, .bell-icon {
+    width: 34px;
     cursor: pointer;
 }
 
@@ -112,14 +123,15 @@ body {
     margin: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 320px 320px 320px 320px;
+    grid-template-rows: 330px 330px 330px 330px;
     column-gap: 20px;
     row-gap: 40px;
 }
 
 .video-container {
-    background-color: aqua;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .thumbnail {
@@ -127,10 +139,37 @@ body {
     height: 220px;
     width: 100%;
     overflow: hidden;
+    padding-bottom: 8px;
 }
 
 .thumbnail img {
     width: 100%;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
+}
+
+.info {
+    position: relative;
+    display: flex;
+    column-gap: 10px;
+    height: 100px;
+}
+
+.desc p {
+    margin: 0;
+}
+
+.desc .title {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 8px;
+}
+
+.desc .channel-name {
+    margin-bottom: 3px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.desc .more {
+    color: rgba(0, 0, 0, 0.7);
 }
