@@ -1,15 +1,89 @@
 body {
-    margin: 0;
-    padding-left: 130px;
     padding-top: 90px;
+    padding-left: 200px;
 }
 
 .header {
     position: fixed;
     background-color: antiquewhite;
     top: 0;
+    left: 0;
+    right: 0;
     height: 90px;
     width: 100%;
+
+    display: grid;
+    grid-template-columns: 200px 1fr 300px;
+    align-items: center;
+}
+
+.logobar {
+    width: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logobar .youtube-logo {
+    width: 130px;
+    cursor: pointer;
+}
+
+.searchbar {
+    margin-left: 25px;
+    width: 100%;
+}
+
+.searchbar input {
+    width: 80%;
+    max-width: 2000px;
+    height: 43px;
+    border-radius: 10px 0 0 10px;
+
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.searchbar input::placeholder {
+    padding-left: 20px;
+}
+
+.searchbar button {
+    width: 45px;
+    height: 47px;
+    margin-left: -5px;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.searchbar button img {
+    width: 10px;
+}
+
+.accountbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.channel-picture {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.upload-icon {
+    width: 50px;
+    cursor: pointer;
+}
+
+.bell-icon {
+    width: 65px;
+    cursor: pointer;
 }
 
 .sidebar {
@@ -18,22 +92,45 @@ body {
     top: 90px;
     left: 0;
     bottom: 0;
-    width: 130px;
+    width: 200px;
+}
+
+.sidebar button {
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    width: 100%;
+    height: 80px;
+    cursor: pointer;
+}
+
+.sidebar button:hover {
+    background-color: rgb(255, 195, 117);
 }
 
 .main-container {
     margin: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    /* TODO: Make a grid for rows */
-    /* grid-template-rows: ; */
-
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 320px 320px 320px 320px;
     column-gap: 20px;
     row-gap: 40px;
 }
 
 .video-container {
-    max-width: 400px;
-    height: 300px;
     background-color: aqua;
+    border-radius: 10px;
+}
+
+.thumbnail {
+    display: flex;
+    height: 220px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.thumbnail img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
 }
