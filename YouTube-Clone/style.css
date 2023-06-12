@@ -3,23 +3,56 @@
 }
 
 body {
-    padding-top: 90px;
-    padding-left: 200px;
+    padding-top: 140px;
+    padding-left: 220px;
+    margin: 0;
 }
 
 .header {
     position: fixed;
-    background-color: antiquewhite;
     top: 0;
     left: 0;
     right: 0;
     height: 90px;
     width: 100%;
-
+    background-color: white;
     display: grid;
     grid-template-columns: 200px 1fr 300px;
     align-items: center;
     z-index: 1;
+}
+
+.tagsbar {
+    position: fixed;
+    background-color: white;
+    top: 90px;
+    left: 200px;
+    right: 0;
+    height: 40px;
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.tag {
+    display: inline-block;
+    background-color: rgb(242, 242, 242);
+    color: black;
+    height: 20px;
+    padding: 5px 10px 8px 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 17px;
+
+    transition: background-color 0.20s;
+}
+
+.tag:hover {
+    background-color: rgba(144, 144, 144, 0.3);
 }
 
 .logobar {
@@ -29,7 +62,7 @@ body {
 }
 
 .logobar .youtube-logo {
-    width: 130px;
+    width: 120px;
     cursor: pointer;
 }
 
@@ -45,8 +78,8 @@ body {
     width: 70%;
     height: 43px;
     border-radius: 50px 0 0 50px;
-
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(211, 211, 211, 1);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .searchbar input::placeholder {
@@ -55,13 +88,17 @@ body {
 
 .searchbar button {
     position: relative;
-    background-color: rgba(248, 248, 248, 1);
+    background-color: rgb(248, 248, 248);
     width: 75px;
     height: 47px;
     margin-left: -5px;
     border-radius: 0 50px 50px 0;
     cursor: pointer;
-    border: 1px solid rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(211, 211, 211, 1)
+}
+
+.searchbar button:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* search-icon */
@@ -71,11 +108,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 20px;
-}
-
-.mic-icon {
-    width: 25px;
-    margin-left: 15px;
+    opacity: 0.6;
 }
 
 .accountbar {
@@ -89,17 +122,24 @@ body {
     height: 50px;
     width: 50px;
     border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
+}
+
+.mic-icon {
+    width: 25px;
+    margin-left: 15px;
+    opacity: 0.8;
 }
 
 .upload-icon, .bell-icon {
     width: 34px;
     cursor: pointer;
+    opacity: 0.8;
 }
 
 .sidebar {
     position: fixed;
-    background-color: antiquewhite;
     top: 90px;
     left: 0;
     bottom: 0;
@@ -109,14 +149,67 @@ body {
 .sidebar button {
     display: block;
     background-color: rgba(0, 0, 0, 0);
-    border: none;
+    border: 0px;
+    border-radius: 0 10px 10px 0;
     width: 100%;
     height: 80px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .sidebar button:hover {
-    background-color: rgb(255, 195, 117);
+    background-color: rgb(242, 242, 242);
+}
+
+hr {
+    margin-left: 7px;
+    margin-right: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+.subs-p {
+    display: block;
+    margin-left: 17px;
+    font-size: 20px;
+}
+
+.sidebar button img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+.sidebar p {
+    display: inline-block;
+    margin-left: 17px;
+    font-size: 17px;
+}
+
+.sub {
+    display: flex;
+    align-items: center;
+    border-radius: 0 5px 5px 0;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.sub:hover {
+    background-color: rgb(242, 242, 242);
+}
+
+.sub img {
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-left: 17px;
+}
+
+.sub p {
+    font-size: 14px;
+    margin: 0;
+    margin-left: 17px;
 }
 
 .main-container {
@@ -129,23 +222,35 @@ body {
 }
 
 .video-container {
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
     cursor: pointer;
 }
 
 .thumbnail {
+    position: relative;
     display: flex;
     height: 220px;
     width: 100%;
     overflow: hidden;
-    padding-bottom: 8px;
+    padding-bottom: 10px;
 }
 
 .thumbnail img {
     width: 100%;
     object-fit: cover;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail .timeline {
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    bottom: 5px;
+    right: 8px;
 }
 
 .info {
@@ -153,6 +258,10 @@ body {
     display: flex;
     column-gap: 10px;
     height: 100px;
+}
+
+.desc {
+    padding-left: 5px;
 }
 
 .desc p {
