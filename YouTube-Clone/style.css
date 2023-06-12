@@ -130,6 +130,7 @@ body {
     width: 25px;
     margin-left: 15px;
     opacity: 0.8;
+    cursor: pointer;
 }
 
 .upload-icon, .bell-icon {
@@ -272,6 +273,7 @@ hr {
     font-size: 20px;
     color: black;
     margin-bottom: 8px;
+    padding-right: 5px;
 }
 
 .desc .channel-name {
