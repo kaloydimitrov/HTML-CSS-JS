@@ -1,0 +1,30 @@
+body {
+    margin: 0 8px 0 8px;
+}
+
+.alternative-domain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alternative-domain p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.logo-bar {
+    height: 95px;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    width: 330px;
+}
+
+.info-bar {
+    margin-top: 8px;
+    height: 50px;
+    border: 1px solid rgba(0, 0, 255, 0.349);
+}
