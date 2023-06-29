@@ -1,0 +1,469 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+.header {
+    position: relative;
+    display: block;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+}
+
+.header .logo {
+    width: 170px;
+}
+
+.login-register {
+    margin-left: 17px;
+}
+
+.login-register p {
+    margin: 0;
+    display: inline-block;
+}
+
+.login, .header-line, .register {
+    color: rgb(0, 153, 255);
+}
+
+.login:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.register:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.header-buttons {
+    position: absolute;
+    right: 0;
+}
+
+.header-buttons button {
+    cursor: pointer;
+    height: 32px;
+    padding: 0 13px 0 13px;
+    border-radius: 5px;
+}
+
+.header-buttons .add-ad {
+    background-color: white;
+    color: rgb(0, 153, 255);
+    border: 1px solid rgb(0, 153, 255);
+}
+
+.header-buttons .add-ad:hover {
+    background-color: rgba(0, 153, 255, 0.1);
+}
+
+.header-buttons .react-ad {
+    background-color: rgb(0, 153, 255);
+    color: white;
+    border: 0;
+}
+
+.header-buttons .react-ad:hover {
+    background-color: rgba(0, 153, 255, 0.7);
+}
+
+.sections {
+    position: relative;
+    display: block;
+}
+
+.sections button {
+    cursor: pointer;
+    height: 25px;
+    color: white;
+    background-color: rgb(104,92,92);
+    border: 0;
+    border-radius: 5px 5px 0 0;
+    padding: 0 10px 0 10px;
+    margin-left: -3px;
+}
+
+.sections button:hover {
+    background-image: linear-gradient(rgb(0, 153, 255), rgb(0, 70, 95));
+}
+
+.sections .active-button {
+    margin-left: 0px;
+    background-image: linear-gradient(rgb(0, 153, 255), rgb(0, 70, 95));
+}
+
+.sections .rent-a-car {
+    position: relative;
+    background-color: white;
+    color: rgb(0, 153, 255);
+    border: 1px solid rgb(0, 153, 255);
+}
+
+.sections .rent-a-car-img {
+    width: 20px;
+}
+
+.sections .rent-a-car:hover {
+    background-image: linear-gradient(white, white);
+}
+
+.sections .my-ads {
+    position: absolute;
+    right: 0;
+}
+
+.line {
+    display: block;
+    height: 7px;
+    background-color: rgb(0, 70, 95);
+}
+
+.main-container {
+    display: flex;
+    grid-template-columns: 685px 315px;
+    column-gap: 15px;
+}
+
+.categories {
+    display: block;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.categories img {
+    cursor: pointer;
+    width: 33px;
+    opacity: .5;
+    transition: opacity 0.5s;
+}
+
+.categories img:hover {
+    opacity: 1;
+}
+
+.vehicles h4 {
+    margin: 5px 0 5px 0;
+}
+
+.search-car {
+    border: 1px solid rgb(0, 153, 255);
+    border-top: 3px solid rgb(0, 153, 255);
+    width: 675px;
+    padding: 10px;
+    position: relative;
+}
+
+.select {
+    width: 100%;
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    margin-bottom: 10px;
+}
+
+.select input {
+    width: 95%;
+}
+
+.main-right {
+    width: 90%;
+}
+
+.left-select {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.left-select .left {
+    height: 100%;
+    width: 100%;
+}
+
+.left-select .right {
+    height: 100%;
+    width: 100%;
+}
+
+.right-select {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    width: 100%;
+}
+
+.right-select .left {
+    height: 100%;
+    width: 100%;
+}
+
+.right-select .right {
+    height: 100%;
+    width: 100%;
+}
+
+.search-button {
+    width: 100%;
+    height: 37px;
+}
+
+.details {
+    width: 100%;
+    position: relative;
+}
+
+.search-p {
+    margin: 0;
+    display: inline-block;
+    color: red;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.detailed-search-p {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    margin: 0;
+    display: inline-block;
+    color: rgb(0, 153, 255);
+    font-size: 12px;
+    margin-right: 10px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.detailed-search-p:hover {
+    text-decoration: none;
+}
+
+.browse-car {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 0px;
+}
+
+.browse-car hr {
+    border: none;
+    height: 1px;
+    color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.car-container {
+    cursor: pointer;
+    display: flex;
+    grid-template-columns: 190px 1fr;
+    width: 100%;
+    height: 140px;
+}
+
+.car-container:hover h5 {
+    color: rgb(0, 153, 255);
+    text-decoration: none;
+}
+
+.car-img-container {
+    position: relative;
+}
+
+.car-img-container .logo {
+    position: absolute;
+    width: 55px;
+    bottom: 3px;
+    right: 4px;
+}
+
+.car-container .car-img {
+    height: 100%;
+    width: 190px;
+    object-fit: cover;
+}
+
+.car-details {
+    padding: 0 10px 0 10px;
+}
+
+.car-details .time {
+    margin-top: 13px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.car-details p {
+    margin: 0;
+    margin-top: 2px;
+    font-size: 15px;
+    color: rgb(51, 51, 51);
+}
+
+.car-details h3 {
+    margin: 0;
+    margin-top: 20px;
+    color: rgb(51, 51, 51);
+    font-size: 21px;
+} 
+
+.car-details h5 {
+    margin: 0;
+    color: rgb(51, 51, 51);
+    text-decoration: underline;
+}
+
+.search-car .pt-1 {
+    position: absolute;
+    top: 20px;
+    left: 220px;
+}
+
+.search-car h6 {
+    margin: 0;
+    margin-bottom: 3px;
+}
+
+.news {
+    width: 100%;
+}
+
+.news h4 {
+    margin: 0;
+    margin-top: 40px;
+}
+
+.news .blue-hr, .blue-hr {
+    border: none;
+    height: 3px;
+    color: rgb(0, 153, 255);
+    background-color: rgb(0, 153, 255);
+}
+
+.news hr {
+    border: none;
+    height: 1px;
+    color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.new {
+    cursor: pointer;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    grid-template-columns: 110px 1fr;
+    column-gap: 10px;
+}
+
+.new img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.new p {
+    font-size: 15px;
+    margin: 0;
+    max-height: 80px;
+    width: 150px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.new p:hover {
+    color: brown;
+    text-decoration: underline;
+}
+
+.annoying-text .a {
+    color: gray;
+    font-weight: bolder;
+}
+
+.annoying-text .b {
+    color: rgb(0, 153, 255);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.annoying-text .b:hover {
+    color: gray;
+}
+
+.annoying-text .c {
+    cursor: pointer;
+    color: gray;
+    text-decoration: underline;
+}
+
+.annoying-text .c:hover {
+    text-decoration: none;
+    color: rgb(80, 80, 80);
+}
+
+.footer hr {
+    border: none;
+    height: 1px;
+    color: rgb(0, 153, 255);
+    background-color: rgb(0, 153, 255);
+}
+
+.footer p {
+    margin: 0;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.footer .contacts {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer .p-contacts {
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.footer .p-questions {
+    position: absolute;
+    right: 0;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer .overall {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: rgb(0, 153, 255);
+    padding: 3px;
+}
+
+.footer .p-overall {
+    cursor: pointer;
+    font-weight: bolder;
+    color: white;
+}
+
+.footer .p-copyright {
+    position: absolute;
+    right: 0;
+    font-size: 11px;
+    color: white;
+}
