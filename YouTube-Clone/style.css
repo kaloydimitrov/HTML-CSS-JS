@@ -80,10 +80,13 @@ body {
     border-radius: 50px 0 0 50px;
     border: 1px solid rgba(211, 211, 211, 1);
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding-left: 20px;
+    font-size: 18px;
 }
 
-.searchbar input::placeholder {
-    padding-left: 20px;
+.searchbar input:focus {
+    outline: none;
+    border: 1px solid #065fd4;
 }
 
 .searchbar button {
