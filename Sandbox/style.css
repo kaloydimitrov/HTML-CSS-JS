@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+}
+
+.content-box {
+    box-sizing: content-box;
+
+    background-color: orangered;
+    border: 10px dotted black;
+    padding: 10px;
+    margin: 10px;
+
+    height: 20em;
+    width: 20em;
+
+    overflow: scroll;
+}
+
+li {
+    color: antiquewhite;
+}
+
+.content-box::-webkit-scrollbar {
+    width: 0.2em;
+}
+
+.content-box::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.content-box::-webkit-scrollbar-thumb {
+    background-color: white;
+}
+
+body::-webkit-scrollbar {
+    width: 0.2em;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: orangered;
+}
