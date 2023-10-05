@@ -1,45 +1,49 @@
+/* TODO: box-sizing: border-box VS content-box */
+/* TODO: *:before, *:after */
+/* TODO: inherit */
+/* TODO: exercise: positions */
+/* TODO: flexbox - flex-grow; flex-shrink; flex-basis; */
+/* TODO: responsive web design - media (defference between max-width and min-width); what if we use 2 max-widths (e.g 500px, 300px); orientation: landscape and more */
+
 body {
     margin: 0;
+    padding: 0;
 }
 
-.content-box {
-    box-sizing: content-box;
-
+.test-text-container {
+    width: 100px;
+    height: 10px;
+    display: inline-block;
+    padding: 10px 100px;
     background-color: orangered;
-    border: 10px dotted black;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: row-reverse; */
+    justify-content: space-around;
+    gap: 20px;
+    width: 500px;
+    height: 600px;
+    background-color: olivedrab;
+}
+
+.flex-container div {
+    height: 100px;
+    width: 100px;
+    background-color: brown;
+    color: white;
+    font-size: 30px;
+    padding: 10px 0 0 10px;
+}
+
+.box-sizing-container {
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
     padding: 10px;
+    border: 1px solid black;
     margin: 10px;
-
-    height: 20em;
-    width: 20em;
-
-    overflow: scroll;
-}
-
-li {
-    color: antiquewhite;
-}
-
-.content-box::-webkit-scrollbar {
-    width: 0.2em;
-}
-
-.content-box::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-.content-box::-webkit-scrollbar-thumb {
-    background-color: white;
-}
-
-body::-webkit-scrollbar {
-    width: 0.2em;
-}
-
-body::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: orangered;
+    background-color: lightcoral;
 }
