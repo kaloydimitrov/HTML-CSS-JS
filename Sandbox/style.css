@@ -5,45 +5,34 @@
 /* TODO: flexbox - flex-grow; flex-shrink; flex-basis; */
 /* TODO: responsive web design - media (defference between max-width and min-width); what if we use 2 max-widths (e.g 500px, 300px); orientation: landscape and more */
 
-body {
-    margin: 0;
-    padding: 0;
+*, *::after, *::before {
+    box-sizing: border-box;
 }
 
-.test-text-container {
-    width: 100px;
-    height: 10px;
-    display: inline-block;
-    padding: 10px 100px;
-    background-color: orangered;
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: row-reverse; */
     justify-content: space-around;
-    gap: 20px;
     width: 500px;
-    height: 600px;
-    background-color: olivedrab;
+    gap: 30px;
+    background-color: lightskyblue;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 0 auto;
 }
 
 .flex-container div {
     height: 100px;
     width: 100px;
-    background-color: brown;
-    color: white;
+    background-color: orangered;
+    color: wheat;
     font-size: 30px;
     padding: 10px 0 0 10px;
-}
-
-.box-sizing-container {
-    box-sizing: border-box;
-    width: 100px;
-    height: 100px;
-    padding: 10px;
-    border: 1px solid black;
-    margin: 10px;
-    background-color: lightcoral;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
 }
