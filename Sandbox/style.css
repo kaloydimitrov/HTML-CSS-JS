@@ -14,7 +14,8 @@ html, body {
     padding: 0;
 }
 
-.flex-container {
+.flex-container1 {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -26,7 +27,7 @@ html, body {
     margin: 0 auto;
 }
 
-.flex-container div {
+.flex-container1 div {
     height: 100px;
     width: 100px;
     background-color: orangered;
@@ -35,4 +36,45 @@ html, body {
     padding: 10px 0 0 10px;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#ten {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#eleven {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.flex-container2 {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.flex-container2 div {
+    height: 100px;
+}
+
+.flex-container2 div:nth-child(1) {
+    background-color: lightgreen;
+    flex-grow: 1;
+}
+
+.flex-container2 div:nth-child(2) {
+    background-color: lightcoral;
+    flex-grow: 2;
+}
+
+.flex-container2 div:nth-child(3) {
+    background-color: lightsalmon;
+    flex-grow: 3;
+}
+
+.large-text {
+    font-size: 300px;
 }
