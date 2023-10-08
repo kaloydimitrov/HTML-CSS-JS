@@ -8,134 +8,92 @@
 
 *, *::after, *::before {
     box-sizing: border-box;
-}
-
-html, body {
     margin: 0;
     padding: 0;
+}
+
+body {
     font-family: 'Roboto', sans-serif;
 }
 
-.flex-container1 {
-    position: relative;
+header, footer, main, aside {
+    border: 2px solid green;
+}
+
+header {
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header .logo-container img {
+    width: 4em;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+}
+
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main aside {
+    min-width: 300px;
+}
+
+.main {
+    display: flex;
+    flex-grow: 1;
+    border: 1px solid red;
+}
+
+.main main {
+    padding: 50px 0;
+    flex-grow: 3;
+    display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    justify-content: space-around;
-    width: 500px;
-<<<<<<< HEAD
-    height: 600px;
-    background-color: lightslategray;
-    margin: 20px;
-    padding: 40px;
-    border-radius: 20px;
-=======
-    gap: 30px;
-    background-color: lightskyblue;
-    padding: 20px;
-    border-radius: 20px;
-    margin: 0 auto;
->>>>>>> 4bf6db7bc37d6e8efa39622d276f3e44f1ae2f10
+    column-gap: 20px;
+    row-gap: 40px;
+    border: 2px solid blue;
 }
 
-.flex-container1 div {
-    height: 100px;
-    width: 100px;
-<<<<<<< HEAD
-    background-color: lightblue;
-    color: gray;
-    font-size: 30px;
-    padding: 10px 0 0 10px;
-    border-radius: 20px;
-=======
-    background-color: orangered;
-    color: wheat;
-    font-size: 30px;
-    padding: 10px 0 0 10px;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
->>>>>>> 4bf6db7bc37d6e8efa39622d276f3e44f1ae2f10
-}
-
-#ten {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#eleven {
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-.flex-container2 {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
-}
-
-.flex-container2 div {
-    height: 100px;
-<<<<<<< HEAD
-    padding: 10px;
-    border: 10px solid black;
-    margin: 20px;
-    background-color: lightcoral;
-}
-
-.card {
+.main main > div {
     cursor: pointer;
-    width: 25em;
-    height: 35em;
+    width: 400px;
+    height: 200px;
     background-color: brown;
-    margin: 20px;
     border-radius: 20px;
     overflow: hidden;
+    font-size: 50px;
+    color: wheat;
+    display: flex;
     border: 1px solid lightgray;
-    transition: rotate 0.8s;
 }
 
-.img-container { 
-    background-color: lightpink;
-    height: 25em;
+.main main > div div:nth-child(1) {
+    width: 80px;
+    padding: 10px 0 0 10px;
 }
 
-.img-container img {
+.main main > div div:nth-child(2) {
+    width: 320px;
+}
+
+.main main > div div:nth-child(2) img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.card aside {
-    padding: 20px;
-    font-size: 32px;
-    color: wheat;
-}
-
-.card:hover {
-    rotate: 360deg;
-}
-
-/* Flexbox */
-=======
-}
-
-.flex-container2 div:nth-child(1) {
-    background-color: lightgreen;
+.main aside {
     flex-grow: 1;
 }
-
-.flex-container2 div:nth-child(2) {
-    background-color: lightcoral;
-    flex-grow: 2;
-}
-
-.flex-container2 div:nth-child(3) {
-    background-color: lightsalmon;
-    flex-grow: 3;
-}
-
-.large-text {
-    font-size: 300px;
-}
->>>>>>> 4bf6db7bc37d6e8efa39622d276f3e44f1ae2f10
