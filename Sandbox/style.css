@@ -6,48 +6,77 @@
 /* TODO: responsive web design - media (defference between max-width and min-width); what if we use 2 max-widths (e.g 500px, 300px); orientation: landscape and more */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
-body {
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html, body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
 
-.test-text-container {
-    width: 100px;
-    height: 10px;
-    display: inline-block;
-    padding: 10px 100px;
-    background-color: orangered;
-}
-
-.flex-container {
+.flex-container1 {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: row-reverse; */
     justify-content: space-around;
-    gap: 20px;
     width: 500px;
+<<<<<<< HEAD
     height: 600px;
     background-color: lightslategray;
     margin: 20px;
     padding: 40px;
     border-radius: 20px;
+=======
+    gap: 30px;
+    background-color: lightskyblue;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 0 auto;
+>>>>>>> 4bf6db7bc37d6e8efa39622d276f3e44f1ae2f10
 }
 
-.flex-container div {
+.flex-container1 div {
     height: 100px;
     width: 100px;
+<<<<<<< HEAD
     background-color: lightblue;
     color: gray;
     font-size: 30px;
     padding: 10px 0 0 10px;
     border-radius: 20px;
+=======
+    background-color: orangered;
+    color: wheat;
+    font-size: 30px;
+    padding: 10px 0 0 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+>>>>>>> 4bf6db7bc37d6e8efa39622d276f3e44f1ae2f10
 }
 
-.box-sizing-container {
-    box-sizing: border-box;
-    width: 100px;
+#ten {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#eleven {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.flex-container2 {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.flex-container2 div {
     height: 100px;
+<<<<<<< HEAD
     padding: 10px;
     border: 10px solid black;
     margin: 20px;
@@ -88,3 +117,25 @@ body {
 }
 
 /* Flexbox */
+=======
+}
+
+.flex-container2 div:nth-child(1) {
+    background-color: lightgreen;
+    flex-grow: 1;
+}
+
+.flex-container2 div:nth-child(2) {
+    background-color: lightcoral;
+    flex-grow: 2;
+}
+
+.flex-container2 div:nth-child(3) {
+    background-color: lightsalmon;
+    flex-grow: 3;
+}
+
+.large-text {
+    font-size: 300px;
+}
+>>>>>>> 4bf6db7bc37d6e8efa39622d276f3e44f1ae2f10
