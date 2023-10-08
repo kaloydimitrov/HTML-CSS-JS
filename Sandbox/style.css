@@ -4,10 +4,12 @@
 /* TODO: exercise: positions */
 /* TODO: flexbox - flex-grow; flex-shrink; flex-basis; */
 /* TODO: responsive web design - media (defference between max-width and min-width); what if we use 2 max-widths (e.g 500px, 300px); orientation: landscape and more */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .test-text-container {
@@ -26,16 +28,20 @@ body {
     gap: 20px;
     width: 500px;
     height: 600px;
-    background-color: olivedrab;
+    background-color: lightslategray;
+    margin: 20px;
+    padding: 40px;
+    border-radius: 20px;
 }
 
 .flex-container div {
     height: 100px;
     width: 100px;
-    background-color: brown;
-    color: white;
+    background-color: lightblue;
+    color: gray;
     font-size: 30px;
     padding: 10px 0 0 10px;
+    border-radius: 20px;
 }
 
 .box-sizing-container {
@@ -43,7 +49,42 @@ body {
     width: 100px;
     height: 100px;
     padding: 10px;
-    border: 1px solid black;
-    margin: 10px;
+    border: 10px solid black;
+    margin: 20px;
     background-color: lightcoral;
 }
+
+.card {
+    cursor: pointer;
+    width: 25em;
+    height: 35em;
+    background-color: brown;
+    margin: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid lightgray;
+    transition: rotate 0.8s;
+}
+
+.img-container { 
+    background-color: lightpink;
+    height: 25em;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card aside {
+    padding: 20px;
+    font-size: 32px;
+    color: wheat;
+}
+
+.card:hover {
+    rotate: 360deg;
+}
+
+/* Flexbox */
