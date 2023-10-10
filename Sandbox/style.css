@@ -1,97 +1,42 @@
-/* TODO: box-sizing: border-box VS content-box */
-/* TODO: *:before, *:after */
-/* TODO: inherit */
-/* TODO: exercise: positions */
-/* TODO: flexbox - flex-grow; flex-shrink; flex-basis; */
-/* TODO: responsive web design - media (defference between max-width and min-width); what if we use 2 max-widths (e.g 500px, 300px); orientation: landscape and more */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-
-*, *::after, *::before {
-    box-sizing: border-box;
+*, *::before, *::after {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-}
-
-header, footer, main, aside {
-    border: 2px solid green;
-}
-
-header {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-header .logo-container img {
-    width: 4em;
-}
-
-header nav ul li {
-    display: inline-block;
-    margin: 0 5px;
-}
-
-header nav ul li a {
-    text-decoration: none;
+html {
+    font-family: sans-serif;
+    font-size: 24px;
+    background-color: lightgray;
 }
 
 .site {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding: 40px;
+    gap: 20px;
 }
 
-.main aside {
-    min-width: 300px;
+header, footer, .main main, .main aside {
+    border-radius: 10px;
+    padding: 15px 0 0 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+}
+
+header, footer {
+    height: 100px;
 }
 
 .main {
     display: flex;
+    gap: 20px;
     flex-grow: 1;
-    border: 1px solid red;
 }
 
 .main main {
-    padding: 50px 0;
-    flex-grow: 3;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    column-gap: 20px;
-    row-gap: 40px;
-    border: 2px solid blue;
-}
-
-.main main > div {
-    cursor: pointer;
-    width: 400px;
-    height: 200px;
-    background-color: brown;
-    border-radius: 20px;
-    overflow: hidden;
-    font-size: 50px;
-    color: wheat;
-    display: flex;
-    border: 1px solid lightgray;
-}
-
-.main main > div div:nth-child(1) {
-    width: 80px;
-    padding: 10px 0 0 10px;
-}
-
-.main main > div div:nth-child(2) {
-    width: 320px;
-}
-
-.main main > div div:nth-child(2) img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    flex-grow: 2;
 }
 
 .main aside {
