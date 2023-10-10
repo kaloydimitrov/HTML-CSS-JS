@@ -6,51 +6,37 @@
 
 html {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: lightgray;
 }
 
-.site {
-    width: 600px;
-    height: 400px;
-    margin: 20px auto;
-    background-color: lightblue;
+body {
+    padding: 100px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 }
 
-.main-box-one, .main-box-two {
-    flex-grow: 1;
-    border: 1px solid black;
+.gallery {
+    max-width: 75em;
+}
+
+ul {
     display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
 }
 
-.box-one {
-    flex-grow: 8;
+li {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 40px 20px;
+    border: 11px solid black;
+    box-shadow: 
+    rgba(100, 100, 111, 0.3) 0px 7px 29px 0px,
+    rgba(100, 100, 111, 0.6) 0px 7px 29px 0px inset;
 }
 
-.box-one div:nth-child(1), .box-one div:nth-child(2) {
-    flex-grow: 1;
-    border-right: 1px solid black;
-    display: flex;
-}
-
-.box-one div:nth-child(2) div, .box-two div:nth-child(2) div {
-    flex-grow: 1;
-    border: 1px solid black;
-    border-bottom: 0;
-    border-right: 0;
-}
-
-.box-two {
-    flex-grow: 2;
-}
-
-/* Border Remove */
-.main-box-one {
-    border-bottom: 0;
-}
-
-.box-one div:nth-child(2) div:nth-child(1), .box-two div:nth-child(2) div:nth-child(1) {
-    border-left: 0;
+h2 {
+    font-size: 50px;
+    padding-bottom: 20px;
 }
