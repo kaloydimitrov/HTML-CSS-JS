@@ -9,21 +9,48 @@ html {
 }
 
 .site {
-    gap: 3px;
+    width: 600px;
+    height: 400px;
+    margin: 20px auto;
+    background-color: lightblue;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    padding: 25px;
-    height: 300px;
-    width: 80px;
 }
 
-span {
+.main-box-one, .main-box-two {
+    flex-grow: 1;
     border: 1px solid black;
-    height: 30px;
-    width: 40px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
+}
+
+.box-one {
+    flex-grow: 8;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-one div:nth-child(1), .box-one div:nth-child(2) {
+    flex-grow: 1;
+    border-right: 1px solid black;
+    display: flex;
+}
+
+.box-one div:nth-child(2) div, .box-two div:nth-child(2) div {
+    flex-grow: 1;
+    border: 1px solid black;
+    border-bottom: 0;
+    border-right: 0;
+}
+
+.box-two {
+    flex-grow: 2;
+}
+
+/* Border Remove */
+.main-box-one {
+    border-bottom: 0;
+}
+
+.box-one div:nth-child(2) div:nth-child(1), .box-two div:nth-child(2) div:nth-child(1) {
+    border-left: 0;
 }
