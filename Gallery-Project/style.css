@@ -1,0 +1,42 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: lightgray;
+}
+
+body {
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery {
+    max-width: 75em;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 40px 20px;
+    border: 11px solid black;
+    box-shadow: 
+    rgba(100, 100, 111, 0.3) 0px 7px 29px 0px,
+    rgba(100, 100, 111, 0.6) 0px 7px 29px 0px inset;
+}
+
+h2 {
+    font-size: 50px;
+    padding-bottom: 20px;
+}

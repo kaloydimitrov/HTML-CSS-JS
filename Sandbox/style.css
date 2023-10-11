@@ -7,36 +7,32 @@
 html {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: lightgray;
+    line-height: 1.2;
 }
 
 body {
-    padding: 100px;
-    display: flex;
-    justify-content: center;
+    min-height: 100vh;
 }
 
-.gallery {
-    max-width: 75em;
+.page {
+    max-width: 40em;
+    margin: 3em auto;
+    background-color: lightpink;
+    padding: 50px;
+    border-radius: 30px;
+    border: 1px solid gray;
+    color: white;
 }
 
-ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-}
-
-li {
-    display: flex;
-    align-items: center;
+.page img {
+    width: 10em;
+    display: block;
+    float: right;
+    padding: 10px;
     background-color: white;
-    padding: 40px 20px;
-    border: 11px solid black;
+    border: 3px solid black;
+    margin: 10px;
     box-shadow: 
-    rgba(100, 100, 111, 0.3) 0px 7px 29px 0px,
-    rgba(100, 100, 111, 0.6) 0px 7px 29px 0px inset;
-}
-
-h2 {
-    font-size: 50px;
-    padding-bottom: 20px;
+    rgba(100, 100, 111, 0.5) 0px 7px 29px 0px,
+    rgba(100, 100, 111, 1) 0px 3px 10px 0px inset;
 }
