@@ -7,32 +7,69 @@
 html {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: lightgray;
-    line-height: 1.2;
 }
 
 body {
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 100px;
 }
 
-.page {
-    max-width: 40em;
-    margin: 3em auto;
-    background-color: lightpink;
-    padding: 50px;
-    border-radius: 30px;
+
+/* Practice 1 */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: antiquewhite; */
+    gap: 0.5em;
+}
+
+.flex-container:nth-child(1) div {
+    min-width: 60px;
+    min-height: 60px;
     border: 1px solid gray;
-    color: white;
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
 }
 
-.page img {
-    width: 10em;
-    display: block;
-    float: right;
-    padding: 10px;
-    background-color: white;
-    border: 3px solid black;
-    margin: 10px;
-    box-shadow: 
-    rgba(100, 100, 111, 0.5) 0px 7px 29px 0px,
-    rgba(100, 100, 111, 1) 0px 3px 10px 0px inset;
+.flex-container div:nth-child(even) {
+    background-color: lightblue;
+}
+
+.flex-container div:nth-child(odd) {
+    background-color: lightcoral;
+}
+
+/* Practice 2 */
+.flex-container:nth-child(2) {
+    width: 800px;
+}
+
+.flex-container:nth-child(2) div {
+    min-height: 60px;
+    border: 1px solid gray;
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+}
+
+.flex-container:nth-child(2) div:nth-child(1) {
+    flex: 1;
+}
+
+.flex-container:nth-child(2) div:nth-child(2) {
+    flex: 1;
+}
+
+.flex-container:nth-child(2) div:nth-child(3) {
+    flex: 1;
 }
