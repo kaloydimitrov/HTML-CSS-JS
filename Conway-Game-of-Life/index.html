@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/129619179c.js" crossorigin="anonymous"></script>
+    <title>CGL</title>
+</head>
+<body>
+    <div class="header-bar">
+        <button class="main-button button">Start</button>
+
+        <div class="slider-container">
+            <label for="size-slider">Size</label>
+            <input type="range" min="1" max="100" value="50" class="slider" id="size-slider">
+
+            <label for="speed-slider">Speed</label>
+            <input type="range" min="1" max="1000" value="500" class="slider" id="speed-slider">
+
+            <label for="zoom-slider">Zoom</label>
+            <input type="range" min="10" max="100" value="10" class="slider" id="zoom-slider">
+        </div>
+
+        <div class="addon-container">
+            <button class="randomize-button button">Randomize <i class="fa-solid fa-dice"></i></button>
+            <button class="clear-button button">Clear <i class="fa-solid fa-broom"></i></button>
+            <button class="next-button button">Next <i class="fa-solid fa-square-caret-right"></i></button>
+        </div>
+    </div>
+
+    <div class="dimensions-container">
+        <p id="dimensions-p">50x50</p>
+
+        <p id="fadeout"><i class="fa-solid fa-triangle-exclamation"></i> Cannot perform that action while the simulation is running!</p>
+    </div>
+
+    <table></table>
+
+    <script src="script.js"></script>
+</body>
+</html>
