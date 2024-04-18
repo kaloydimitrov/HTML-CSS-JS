@@ -11,11 +11,11 @@ let index = size - 1;
 
 function Start(randomize = false)
 {
-    for (let i = 0; i < index; i++)
+    for (let i = 1; i < index; i++)
     {
         const tr = document.createElement("tr");
 
-        for (let j = 0; j < index; j++)
+        for (let j = 1; j < index; j++)
         {
             const td = document.createElement("td");
 
@@ -106,14 +106,14 @@ function throwError() {
     setTimeout(() => {
         const intervalId = setInterval(() => {
             if (opacity > 0) {
-                opacity -= 0.1;
+                opacity -= 0.01;
                 el.style.opacity = opacity;
             } else {
                 clearInterval(intervalId);
                 el.style.display = "none";
                 el.style.opacity = 1;
             }
-        }, 50);
+        }, 5);
     }, 4000);
 }
 
@@ -176,7 +176,7 @@ sizeSlider.oninput = () => {
     
     Start();
 
-    document.getElementById("dimensions-p").textContent = `${size - 1}x${size - 1}`;
+    document.getElementById("dimensions-p").textContent = `${size - 2}x${size - 2}`;
 }
 
 

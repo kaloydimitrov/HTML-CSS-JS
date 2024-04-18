@@ -1,13 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
 
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     font-family: inherit;
+    font-size: inherit;
 }
 
 html {
-    font-family: 'Rubik Burned', 'Arial Narrow', Arial, sans-serif;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 1.2em;
+}
+
+body {
+    padding-bottom: 100px;
 }
 
 /* Table */
@@ -15,20 +21,21 @@ table {
     border-collapse: collapse;
     margin: 0 auto;
     overflow: scroll;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 td {
-    border: 1px solid red;
+    border: 1px solid rgb(153, 153, 153);
     width: 10px;
     height: 10px;
 }
 
 td.black {
-    background-color: yellow;
+    background-color: rgb(126, 126, 126);
 }
 
 td.white {
-    background-color: cyan;
+    background-color: #ffff00;
 }
 
 /* Header */
@@ -38,6 +45,7 @@ td.white {
 
     padding: 0.6em;
     background-color: black;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .button {
@@ -56,7 +64,7 @@ td.white {
 }
 
 .randomize-button, .clear-button, .next-button {
-    padding: 0 7px;
+    padding: 0 20px;
 }
 
 .slider-container {
@@ -80,13 +88,14 @@ td.white {
     outline: none;
     -webkit-transition: .2s;
     transition: opacity .2s;
+    padding: 0 10px 0 10px;
 }
   
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 25px;
-    height: 25px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%; 
     background: rgba(255, 68, 0, 0.6);
     cursor: pointer;
@@ -107,20 +116,21 @@ td.white {
 .dimensions-container {
     padding: 5px 10px 0 10px;
     margin-bottom: 10px;
-    height: 30px;
     color: gray;
     display: flex;
     justify-content: space-between;
+    font-size: 1.7em;
 }
 
 #fadeout {
     display: none;
     background-color: rgba(255, 68, 0, 0.8);
     color: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 0, 0, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     align-items: center;
     padding: 0 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 #fadeout i {
