@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Потребител</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="PapaParse-5.0.2/papaparse.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <header>
+        <h1>ПОТРЕБИТЕЛ</h1>
+    </header>
+    <main id="app">
+        <section class="game-info">
+            <h2>Инструкции</h2>
+            <p>Изберете файла с всички въпроси, за да играете.</p>
+            <input type="file" @change="handleFileSelect" />
+            <br>
+            <p>След избиране на файл играта ще започне автоматично.</p>
+        </section>
+
+        <section v-if="questions.length" class="game-container">
+            <h2>Въпрос #{{ currentQuestionIndex + 1 }}</h2>
+            <div class="question-box">
+                <h1>{{ currentQuestionText }}</h1>
+            </div>
+            <div class="answers-container">
+                <div v-for="(item, index) in currentQuestionAnswers" :key="index" class="answer-box">
+                    <div :class="item.isAnsweredCorrectly ? 'answered' : 'not-answered'">{{ index + 1 }}</div>
+                    <div :class="item.isAnsweredCorrectly ? 'answered' : 'not-answered'"><span v-if="item.isAnsweredCorrectly">{{ item.answer }}</span></div>
+                    <div :class="item.isAnsweredCorrectly ? 'answered' : 'not-answered'">{{ item.points }}</div>
+                </div> 
+            </div>
+            <div class="total-points-box">
+                <h2>{{ countPoints() }}</h1>
+                <span>точки</span>
+            </div>
+            <div class="input-container">
+                <p>Неуспешни: {{ currentFailedAttempts }}</p>
+                <input type="text" v-model="input" placeholder="Въведи">
+                <button @click="answerQuestion()" style="margin: 0;">Отговори</button>
+            </div>
+            <button @click="btnNextQuestion">&#8594; Следващ въпрос</button>   
+        </section>
+    </main>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    input: "",
+                    questions: [],
+                    currentFailedAttempts: 0, 
+                    currentQuestionIndex: 0,
+                    currentQuestionText: "",
+                    currentQuestionAnswers: []
+                }
+            },
+            methods: {
+                handleFileSelect(event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        Papa.parse(file, {
+                            complete: (results) => {
+                                this.questions = results.data;
+                                this.nextQuestion();
+                            },
+                            error: (error) => {
+                                console.error("Error parsing file:", error);
+                            }
+                        });
+                    }
+                },
+                nextQuestion() {
+                    const questionAndAnswers = this.questions[this.currentQuestionIndex];
+                    const [question, ...answers] = questionAndAnswers;
+
+                    this.currentQuestionText = question;
+
+                    // Форматиране на 'answers'
+                    let formattedAnswers = [];
+
+                    for (let index = 0; index < answers.length; index += 2) {
+                        formattedAnswers.push({
+                            points: parseInt(answers[index + 1]),
+                            answer: answers[index],
+                            isAnsweredCorrectly: false
+                        });
+                    }
+                    
+                    // Подреждаме 'formattedAnswers'
+                    formattedAnswers.sort((a, b) => b.points - a.points);
+
+                    this.currentQuestionAnswers = formattedAnswers;
+                },
+                countPoints() {
+                    let count = 0;
+                    this.currentQuestionAnswers.forEach((obj) => { if (obj.isAnsweredCorrectly) { count += obj.points; } });
+                    return count;
+                },
+                answerQuestion() {
+                    if (!this.input) { return; }
+
+                    let found = false;
+                    this.currentQuestionAnswers.forEach((obj) => {
+                        if (!obj.isAnsweredCorrectly && obj.answer.toLowerCase() === this.input.toLowerCase().trim()) {
+                            obj.isAnsweredCorrectly = true;
+                            found = true;
+                        }
+                    });
+
+                    if (!found) {
+                        this.currentFailedAttempts += 1;
+                    }
+
+                    this.input = "";
+                },
+                btnNextQuestion() {
+                    this.currentFailedAttempts = 0;
+                    this.currentQuestionIndex += 1;
+                    this.nextQuestion();
+                }
+            },
+        }).mount('#app');
+    </script>
+</body>
+</html>

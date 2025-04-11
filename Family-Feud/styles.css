@@ -1,0 +1,170 @@
+body {
+    background-color: #88D498;
+    color: #000000;
+    font-family: Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+header {
+    background-color: #1A936F;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+.game-info {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #C6DABF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.game-container {
+    border: 2px solid #1A936F;
+    margin: 30px 10px;
+    padding: 10px;
+    background-color: #C6DABF;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.question-box {
+    margin-top: 10px;
+    background: radial-gradient(circle, rgb(237, 183, 83) 50%, rgba(237, 221, 83, 1) 100%);
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.answers-container {
+    margin: 0 auto;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    width: 70%;
+    margin-top: 24px;
+    /* background-color: red; */
+}
+
+.answer-box {
+    display: flex;
+    gap: 5px;
+}
+
+.answer-box div {
+    border-radius: 15px;
+    padding: 4px 0;
+    font-size: 1.3rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* number */
+.answer-box div:nth-child(1) {
+    flex-grow: 1;
+}
+
+/* answer */
+.answer-box div:nth-child(2) {
+    flex-grow: 15;
+}
+
+/* points */
+.answer-box div:nth-child(3) {
+    flex-grow: 2;
+}
+
+/* styles if answer is guessed */
+.answered {
+    background: linear-gradient(0deg,rgba(87, 199, 133, 1) 50%, rgba(26, 147, 111, 1) 100%);
+}
+
+/* styles if answer still not guessed */
+.not-answered {
+    background: linear-gradient(to right, rgb(237, 183, 83), rgba(237, 221, 83, 1));
+}
+
+.total-points-box {
+    margin: 20px auto 0 auto;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #1A936F;
+    border-radius: 100%;
+    color: #1A936F;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.questions-container {
+    display: none;
+}
+
+.input-container {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+}
+
+
+h2 {
+    font-size: 28px;
+    color: #1A936F;
+}
+
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+}
+
+
+button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background-color: #1A936F;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: Verdana, sans-serif;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #157a5d;
+}
+
+input[type="text"] {
+    border: 2px solid #1A936F;
+    padding: 10px 14px;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    background-color: #f0fdf7;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #157a5d;
+}
