@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="bg">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Игра</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Verdana&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		<script src="PapaParse-5.0.2/papaparse.min.js"></script>
+		<script src="familyFeud.js"></script>
+	</head>
+	<body>
+        <header>
+            <h1>Асистент на водещия на "Училищни войни"</h1>
+        </header>
+		<main>
+            <section class="game-info">
+                <h2>Инструкции</h2>
+                <p>Изберете файла с всички въпроси (или само тези, които искате)</p>
+                <input type="file" id="csv-file" name="files"/>
+                <br>
+                <p>Сега кликнете върху бутон, за да получите въпрос и отговори, които съответстват на избраната опция от падащото меню.</p>
+            </section>
+
+            <section id="questionsContainer" class="questions-container">
+                <button style="margin-left: 400px;" onclick="loadQuestion()">Вземи въпрос!</button>
+                    <canvas id="myChart" width="400" height="100"></canvas>
+                
+
+                <h2>По-долу са отговорите, които можете да покажете на останалите участници</h2>
+                <section class="game-info">
+                    <ol id="shownAnswers">
+                        <p>&#9432; Натисни бутона за резултати.</p>
+                    </ol>
+                </section>
+            </section>
+        </main>
+	</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Потребител</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Verdana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="PapaParse-5.0.2/papaparse.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <header>
+        <h1>ПОТРЕБИТЕЛ</h1>
+    </header>
+    <main id="app">
+        <section class="game-container">
+            <h2>Въпрос #{{ currentQuestionCount }}</h2>
+            <div class="question-box">
+                <h1>{{ currentQuestionText }}</h1>
+            </div>
+            <div class="answers-container">
+                <div v-for="(item, index) in currentQuestionAnswers" :key="index" class="answer-box">
+                    <div :class="item.isAnsweredCorrectly ? 'answered' : 'not-answered'">{{ index + 1 }}</div>
+                    <div :class="item.isAnsweredCorrectly ? 'answered' : 'not-answered'"><span v-if="item.isAnsweredCorrectly">{{ item.answer }}</span></div>
+                    <div :class="item.isAnsweredCorrectly ? 'answered' : 'not-answered'">{{ item.points }}</div>
+                </div> 
+            </div>
+            <div class="total-points-box">
+                <h2>{{ countPoints() }}</h1>
+                <span>точки</span>
+            </div>
+            <div class="input-container">
+                <p>Неуспешни: {{ currentFailedAttempts }}</p>
+                <input type="text" v-model="input" placeholder="Въведи">
+                <button @click="answerQuestion()" style="margin: 0;">Отговори</button>
+            </div>
+            <button @click="nextQuestion()" style="margin-top: 40px;">&#8594; Следващ въпрос</button>
+            <div class="error-next-question" id="errorNextQuestion">
+                <span>Още сме на същия въпрос. Фасилитаторът не го е сменил!</span>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    input: "",
+                    currentFailedAttempts: 0, 
+                    currentQuestionCount: 1,
+                    currentQuestionText: "",
+                    currentQuestionAnswers: []
+                }
+            },
+            methods: {
+                countPoints() {
+                    let count = 0;
+                    this.currentQuestionAnswers.forEach((obj) => { if (obj.isAnsweredCorrectly) { count += obj.points; } });
+                    return count;
+                },
+                handleQuestion(data) {
+                    this.currentQuestionText = data.title;
+
+                    let formattedAnswers = data.answers.map(obj => ({
+                        points: parseInt(obj.points),
+                        answer: obj.text,
+                        isAnsweredCorrectly: false
+                    }));
+
+                    // Подреждаме отговорите по точки
+                    formattedAnswers.sort((a, b) => b.points - a.points);
+
+                    this.currentQuestionAnswers = formattedAnswers;
+                },
+                answerQuestion() {
+                    if (!this.input) { return; }
+
+                    let found = false;
+                    this.currentQuestionAnswers.forEach((obj) => {
+                        if (!obj.isAnsweredCorrectly && obj.answer.toLowerCase() === this.input.toLowerCase().trim()) {
+                            obj.isAnsweredCorrectly = true;
+                            found = true;
+                        }
+                    });
+
+                    if (!found) {
+                        this.currentFailedAttempts += 1;
+                    }
+
+                    this.input = "";
+                },
+                nextQuestion() {
+                    const errorElement = document.getElementById("errorNextQuestion");
+
+                    fetch('question.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.title === this.currentQuestionText) {
+                            errorElement.style.opacity = "1";
+                            return;
+                        }
+                        this.currentFailedAttempts = 0; 
+                        this.currentQuestionCount += 1;
+                        errorElement.style.opacity = "0";
+                        this.handleQuestion(data);
+                    })
+                    .catch(error => {
+                        console.error("Не можа да зареди question.json", error);
+                    });
+                }
+            },
+            mounted() {
+                fetch('question.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        this.handleQuestion(data);
+                    })
+                    .catch(error => {
+                        console.error("Не можа да зареди question.json", error);
+                    });
+                }
+        }).mount('#app');
+    </script>
+</body>
+</html>
